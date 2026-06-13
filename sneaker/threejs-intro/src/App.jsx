@@ -101,7 +101,7 @@ const translations = {
           ],
         },
         {
-          role: 'Front-end Engineer',
+          role: 'Planner & tester',
           bio: [
             'Hoi, ik ben Nino Sowinangoen. Als planner en tester van dit project hielp ik het ontwikkelproces te organiseren en zorgde ik dat elke functie werkte zoals bedoeld. Door de workflow te coördineren en de website grondig te testen, hielp ik een soepele, betrouwbare en gebruiksvriendelijke ervaring te creëren van begin tot eind.',
           ],

@@ -101,7 +101,7 @@ const translations = {
           ],
         },
         {
-          role: 'Planner & tester',
+          role: 'Front-end Engineer',
           bio: [
             'Hoi, ik ben Nino Sowinangoen. Als planner en tester van dit project hielp ik het ontwikkelproces te organiseren en zorgde ik dat elke functie werkte zoals bedoeld. Door de workflow te coördineren en de website grondig te testen, hielp ik een soepele, betrouwbare en gebruiksvriendelijke ervaring te creëren van begin tot eind.',
           ],
@@ -136,7 +136,7 @@ function Sneaker({ autoSpin = true }) {
     }
   })
 
-  const gltf = useGLTF('/model.glb')
+  const gltf = useGLTF('/model.glb', false, true)
 
   return (
     <group ref={group} rotation={[0.05, -0.9, 0.34]} scale={5.4}>
@@ -361,22 +361,6 @@ function HomePage() {
   const { t } = useLang()
   return (
     <>
-      {/* Left vertical icon rail */}
-      <aside className="rail">
-        <button className="rail-btn" aria-label="Search">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" /><path d="M21 21l-4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-        </button>
-        <button className="rail-btn" aria-label="Cart">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.4 12.3a1 1 0 001 .7h8.7a1 1 0 001-.8L21 8H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><circle cx="10" cy="20" r="1.3" fill="currentColor" /><circle cx="18" cy="20" r="1.3" fill="currentColor" /></svg>
-        </button>
-        <button className="rail-btn" aria-label="Settings">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.8" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-        </button>
-        <button className="rail-btn" aria-label="Account">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.8" /><path d="M4 21a8 8 0 0116 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-        </button>
-      </aside>
-
       {/* Right pagination dots */}
       <aside className="dots">
         <span className="dot" />
@@ -559,4 +543,4 @@ export default function App() {
   )
 }
 
-useGLTF.preload('/model.glb')
+useGLTF.preload('/model.glb', false, true)

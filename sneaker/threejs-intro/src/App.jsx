@@ -33,8 +33,10 @@ const translations = {
       position: 'Position',
       hover: 'Hover',
       grounded: 'Grounded',
-      selection: 'SELECTION (2)',
-      color: 'Color',
+      details: 'DETAILS',
+      release: 'Year',
+      retail: 'Retail',
+      palette: 'Palette',
       camera: 'CAMERA',
       fov: 'Field of View',
       rotation: 'Rotation Speed',
@@ -78,8 +80,10 @@ const translations = {
       position: 'Positie',
       hover: 'Zwevend',
       grounded: 'Op de grond',
-      selection: 'SELECTIE (2)',
-      color: 'Kleur',
+      details: 'DETAILS',
+      release: 'Jaar',
+      retail: 'Prijs',
+      palette: 'Palet',
       camera: 'CAMERA',
       fov: 'Gezichtsveld',
       rotation: 'Rotatiesnelheid',
@@ -410,6 +414,13 @@ function HomePage() {
   )
 }
 
+const colorwaySpecs = {
+  Chicago: { year: '1985', retail: '$180', swatches: ['#c8102e', '#ffffff', '#000000'] },
+  Bred:    { year: '1994', retail: '$180', swatches: ['#000000', '#c8102e'] },
+  Royal:   { year: '1985', retail: '$180', swatches: ['#0057a8', '#ffffff', '#000000'] },
+  Shadow:  { year: '1985', retail: '$180', swatches: ['#4a4145', '#c0bfbf', '#000000'] },
+}
+
 function ViewPage() {
   const { t } = useLang()
   const [fov, setFov] = useState(38)
@@ -455,13 +466,22 @@ function ViewPage() {
         </section>
 
         <section className="cfg-card">
-          <span className="cfg-tag">{t.view.selection}</span>
-          <div className="cfg-color-row">
-            <div>
-              <span className="cfg-label">{t.view.color}</span>
-              <span className="cfg-value">#c8102e</span>
+          <span className="cfg-tag">{t.view.details}</span>
+          <div className="cfg-spec-row">
+            <span className="cfg-spec-label">{t.view.release}</span>
+            <span className="cfg-spec-val">{colorwaySpecs[colorway].year}</span>
+          </div>
+          <div className="cfg-spec-row">
+            <span className="cfg-spec-label">{t.view.retail}</span>
+            <span className="cfg-spec-val cfg-spec-price">{colorwaySpecs[colorway].retail}</span>
+          </div>
+          <div className="cfg-palette-row">
+            <span className="cfg-spec-label">{t.view.palette}</span>
+            <div className="cfg-palette-swatches">
+              {colorwaySpecs[colorway].swatches.map((color, i) => (
+                <span key={i} className="cfg-swatch-dot" style={{ background: color }} />
+              ))}
             </div>
-            <span className="cfg-swatch" />
           </div>
         </section>
 

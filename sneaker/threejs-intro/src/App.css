@@ -594,6 +594,41 @@
   background: var(--red);
 }
 
+.cfg-spec-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cfg-spec-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.cfg-spec-val {
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.cfg-spec-price { color: var(--green); }
+
+.cfg-palette-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cfg-palette-swatches {
+  display: flex;
+  gap: 0.4rem;
+}
+.cfg-swatch-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
 /* ---------- About page ---------- */
 /* let the about page grow taller than the viewport and scroll */
 .site-about {

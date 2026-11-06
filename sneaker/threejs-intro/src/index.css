@@ -1,9 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Anton';
+  src: url('/fonts/anton.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #1f1d1e;
-  background: #f7444e;
+  --paper: #f3f1ec;
+  --ink: #20201e;
+  --stone: #e5e2dc;
+  --accent: #8c242b;
+  --ink-2: #5c5a55; /* secondary text, 6.2:1 on paper */
+  --line: rgba(32, 32, 30, 0.16);
+  --line-strong: rgba(32, 32, 30, 0.42);
+
+  --display: 'Anton', 'Arial Narrow', Impact, sans-serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: clamp(16px, 3.2vw, 48px);
+  --ease-out: cubic-bezier(0.2, 0.75, 0.15, 1);
+
+  font-family: var(--sans);
+  font-feature-settings: 'ss01', 'cv11';
+  color: var(--ink);
+  background: var(--paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,24 +40,27 @@
   color-scheme: light;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
-  background: inherit;
-  color: inherit;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: clip;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
@@ -36,12 +68,17 @@ a {
 }
 
 button,
-input,
-textarea,
-select {
+input {
   font: inherit;
+  color: inherit;
 }
 
-#root {
-  min-height: 100vh;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
 }
